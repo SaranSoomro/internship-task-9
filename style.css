@@ -1,0 +1,102 @@
+/* Reset + Base */
+* {margin: 0; padding: 0; box-sizing: border-box;}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #fff;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+a {text-decoration: none; color: inherit;}
+img {width: 100%; border-radius: 10px;}
+
+/* Header */
+header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 15px 40px;
+  background: #0077b6; color: #fff;
+  position: sticky; top: 0; z-index: 1000;
+}
+header nav a {
+  margin: 0 15px; font-weight: bold; color: #fff;
+  transition: color 0.3s;
+}
+header nav a:hover {color: #ffd60a;}
+.btn {
+  background: #ffd60a; padding: 10px 20px; border-radius: 25px;
+  border: none; cursor: pointer; font-weight: bold;
+  transition: transform 0.3s;
+}
+.btn:hover {transform: scale(1.05);}
+
+/* Hero */
+.hero {
+  background: url('https://source.unsplash.com/1600x800/?travel,beach') center/cover no-repeat;
+  height: 90vh; display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  text-align: center; color: #fff; padding: 0 20px;
+}
+.hero h1 {font-size: 3rem; margin-bottom: 20px;}
+.search-bar {
+  background: rgba(255,255,255,0.9); padding: 15px;
+  border-radius: 10px; display: flex; flex-wrap: wrap;
+  gap: 10px; max-width: 800px; width: 100%;
+}
+.search-bar input {
+  flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px;
+}
+
+/* Sections */
+section {padding: 60px 40px;}
+h2 {text-align: center; margin-bottom: 30px; font-size: 2rem; color: #0077b6;}
+.grid {
+  display: grid; gap: 20px;
+}
+.destinations .grid {grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));}
+.packages .grid {grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));}
+.card {
+  background: #f9f9f9; padding: 15px; border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.card:hover {transform: translateY(-5px);}
+
+/* Testimonials */
+.testimonials .grid {grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));}
+.testimonial {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center;
+}
+.testimonial img {
+  width: 80px; height: 80px; border-radius: 50%; margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+  background: #0077b6; color: #fff; text-align: center;
+  padding: 30px 20px;
+}
+footer .links a {margin: 0 10px; color: #ffd60a; font-weight: bold;}
+footer .social a {margin: 0 10px; font-size: 1.2rem;}
+
+/* Dark Mode */
+body.dark {background: #222; color: #f1f1f1;}
+body.dark header, body.dark footer {background: #000;}
+body.dark .card {background: #333; color: #fff;}
+body.dark .btn {background: #ff9800; color: #fff;}
+
+/* Scroll to top */
+#scrollTopBtn {
+  position: fixed; bottom: 20px; right: 20px;
+  background: #0077b6; color: #fff;
+  border: none; padding: 12px 15px;
+  border-radius: 50%; cursor: pointer;
+  display: none; font-size: 18px;
+}
+
+/* Responsive */
+@media(max-width:768px) {
+  header {flex-direction: column;}
+  .hero h1 {font-size: 2rem;}
+  .search-bar {flex-direction: column;}
+}
